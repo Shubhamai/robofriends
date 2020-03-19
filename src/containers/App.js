@@ -38,8 +38,8 @@ class App extends React.Component {
     const { robots } = this.state;
     const { searchField, onSearchChange } = this.props;
 
-    const filterRobots = robots.filter(robot => {
-      return robot.name.toLowerCase().includes(searchField.toLowerCase());
+    const filterRobots = this.state.robots.filter(robot => {
+      return robot.name.toLowerCase().includes(this.props.searchField.toLowerCase());
     });
     if (this.state.robots.length === 0) {
       return <h1 className="tc f1">Loading</h1>;
